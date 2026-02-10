@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Copy of Edenic Digital Business Card",
+  "description": "A premium, interactive electronic business card for Edenic Property Group, featuring AI-powered bio generation and contact saving functionality.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
