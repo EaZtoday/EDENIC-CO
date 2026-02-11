@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ProfileData } from './types';
 import VCardButton from './components/VCardButton';
-import { generateProfessionalBio } from './services/geminiService';
 
 // Custom SVG Insights Data
 const SVG_INSIGHTS = [
@@ -87,10 +86,9 @@ const App: React.FC = () => {
     linkedin: "https://www.linkedin.com/in/george-kruger-a9a88117b/",
     instagram: "https://www.instagram.com/edenic784/?hl=en",
     facebook: "https://www.facebook.com/Edenic.co/?ref=NONE_xav_ig_profile_page_web#",
-    bio: "Loading professional bio..."
+    bio: "Maintenance, renovations & new builds — done right, every time. Located in St. Vincent & The Grenadines. That's the Edenic.CO way."
   });
 
-  const [loading, setLoading] = useState(true);
   const [showQR, setShowQR] = useState(false);
   const [qrTab, setQrTab] = useState<'card' | 'instagram'>('card');
   
@@ -98,16 +96,6 @@ const App: React.FC = () => {
   const [insightIndex, setInsightIndex] = useState(0);
   const [fadeInsight, setFadeInsight] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const bio = await generateProfessionalBio(profile.name, profile.title);
-      setProfile(prev => ({ ...prev, bio }));
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
 
   // Automatic Insight Rotation with Pause support
   useEffect(() => {
@@ -244,17 +232,9 @@ const App: React.FC = () => {
                      <span className="text-[11px] font-bold text-[#002855] uppercase tracking-widest">About</span>
                      <div className="w-1.5 h-1.5 rounded-full bg-[#00A651]"></div>
                 </div>
-                {loading ? (
-                    <div className="space-y-2.5 opacity-50 animate-pulse">
-                        <div className="h-3 bg-slate-300 rounded w-full"></div>
-                        <div className="h-3 bg-slate-300 rounded w-4/5"></div>
-                        <div className="h-3 bg-slate-300 rounded w-3/5"></div>
-                    </div>
-                ) : (
-                    <p className="text-[14px] leading-relaxed text-[#002855] font-medium font-sans">
-                        {profile.bio}
-                    </p>
-                )}
+                <p className="text-[14px] leading-relaxed text-[#002855] font-medium font-sans">
+                    {profile.bio}
+                </p>
             </div>
 
             {/* SVG Insights Widget - Pauses on Hover/Touch */}
