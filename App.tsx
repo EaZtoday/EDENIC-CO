@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ProfileData } from './types';
 import VCardButton from './components/VCardButton';
-import { generateProfessionalBio } from './services/geminiService';
 
 // Custom SVG Insights Data
 const SVG_INSIGHTS = [
@@ -87,27 +86,17 @@ const App: React.FC = () => {
     linkedin: "https://www.linkedin.com/in/george-kruger-a9a88117b/",
     instagram: "https://www.instagram.com/edenic784/?hl=en",
     facebook: "https://www.facebook.com/Edenic.co/?ref=NONE_xav_ig_profile_page_web#",
-    bio: "Loading professional bio..."
+    bio: "George J. Kruger is a dedicated builder at Edenic, a real estate and property management firm based in St. Vincent & the Grenadines. With a hands-on approach and a passion for quality craftsmanship, George brings your vision to life. Your property, Our priority!"
   });
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [showQR, setShowQR] = useState(false);
   const [qrTab, setQrTab] = useState<'card' | 'instagram'>('card');
-  
+
   // Insight Rotation State
   const [insightIndex, setInsightIndex] = useState(0);
   const [fadeInsight, setFadeInsight] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const bio = await generateProfessionalBio(profile.name, profile.title);
-      setProfile(prev => ({ ...prev, bio }));
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
 
   // Automatic Insight Rotation with Pause support
   useEffect(() => {
