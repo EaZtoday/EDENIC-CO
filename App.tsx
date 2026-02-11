@@ -86,7 +86,7 @@ const App: React.FC = () => {
     linkedin: "https://www.linkedin.com/in/george-kruger-a9a88117b/",
     instagram: "https://www.instagram.com/edenic784/?hl=en",
     facebook: "https://www.facebook.com/Edenic.co/?ref=NONE_xav_ig_profile_page_web#",
-    bio: "Experienced builder at Edenic focused on delivering high-quality residential solutions and personalized property care."
+    bio: "Maintenance, renovations & new builds — done right, every time. Proudly serving St. Vincent & The Grenadines. That's the Edenic.CO way."
   });
 
   const [showQR, setShowQR] = useState(false);
