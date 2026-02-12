@@ -186,7 +186,7 @@ const App: React.FC = () => {
                         src="https://i.postimg.cc/2SWX2RmP/KRUGER.jpg"
                         alt={`${profile.name} Profile`} 
                         className="w-full h-full rounded-full object-cover"
-                        style={{ objectPosition: '60% 15%' }}
+                        style={{ objectPosition: '75% 15%' }}
                     />
                 </div>
             </div>
