@@ -183,7 +183,7 @@ const App: React.FC = () => {
             <div className="mt-4 mb-5 relative">
                 <div className="w-32 h-32 rounded-full p-1.5 bg-white shadow-xl relative z-10">
                     <img 
-                        src="https://i.postimg.cc/SKVddx0T/KRUGER.png"
+                        src="https://i.postimg.cc/2SWX2RmP/KRUGER.jpg"
                         alt={`${profile.name} Profile`} 
                         className="w-full h-full rounded-full object-cover"
                     />
