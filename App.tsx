@@ -185,7 +185,8 @@ const App: React.FC = () => {
                     <img 
                         src="https://i.postimg.cc/2SWX2RmP/KRUGER.jpg"
                         alt={`${profile.name} Profile`} 
-                        className="w-full h-full rounded-full object-cover object-top"
+                        className="w-full h-full rounded-full object-cover"
+                        style={{ objectPosition: '60% 15%' }}
                     />
                 </div>
             </div>
